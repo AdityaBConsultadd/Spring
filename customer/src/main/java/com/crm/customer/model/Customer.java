@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int customerID;
+    private long customerID;
     @Column
     @NonNull
     private String name;
@@ -26,11 +26,11 @@ public class Customer {
         return name;
     }
 
-    public int getCustomerID() {
+    public long getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(int customerID) {
+    public void setCustomerID(long customerID) {
         this.customerID = customerID;
     }
 

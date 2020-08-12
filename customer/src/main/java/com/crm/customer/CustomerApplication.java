@@ -55,4 +55,9 @@ JPA    crud
 //IOC dependency injection
 //DAO (data access object)
 
+//@RestContoller
+//@Repository
+//@Springapplication
+
+
 * */
