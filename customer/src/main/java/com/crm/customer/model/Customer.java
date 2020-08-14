@@ -1,15 +1,18 @@
 package com.crm.customer.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerID;
     @Column
     @NonNull
@@ -20,6 +23,21 @@ public class Customer {
     private String email;
     @Column
     private String address;
+
+    public void setCustomerID(Long customerID) {
+        this.customerID = customerID;
+    }
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    private List<Order> orderList;
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
 
     @NonNull
     public String getName() {

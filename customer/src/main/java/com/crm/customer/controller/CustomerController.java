@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/customer")
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class CustomerController implements Serializable{
     @Autowired
