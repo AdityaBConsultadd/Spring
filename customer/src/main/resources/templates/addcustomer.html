@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--<form>form-->
+<form th:action="@{/customer/add}" th:object="${customer}" method="post">
+    <label for="Name">CustomerName:</label>
+    <input type="text" id="Name" name="name" th:field="*{name}" value="enter name" /><br>
+    <label for="Mobile">Mobile:</label>
+    <input type="number" id="Mobile" name="name" th:field="*{mobile}" placeholder="Enter mobile" /><br>
+    <!--        <label for="ManagerId">CustomerManagerId:</label>-->
+    <!--    <input type="number" id="ManagerId" name="name" th:field="*{ManagerId}" placeholder="enter Id" /><br>-->
+    <label for="Address">Address:</label>
+    <input type="text" id="Address" name="name" th:field="*{address}" placeholder="enter Address" /><br>
+    <label for="Email">Email:</label>
+    <input type="text" id="Email" name="name" th:field="*{email}" value="enter mail" /><br>
+    <input type="submit" value="submit" /><br>
+</form>
+<a href="/customer/list" class="btn btn-primary"><i
+        class="fas fa-user-plus ml-2"> Add Customer</i></a>
+
+</body>
+</html>

@@ -38,6 +38,11 @@ public class OrderController {
         return orderRepo.findById(id);
     }
 
+    @GetMapping("/getQ1/{id}")
+    public List<Order> getQ1(@PathVariable(value = "id")int id){
+        return orderRepo.Q1(id);
+    }
+
     @PostMapping("/post")
     public Order postOrder(@RequestBody Order order){
         Optional<Product> product = productRepo.findById(1l);

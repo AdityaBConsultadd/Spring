@@ -30,6 +30,13 @@ public class ProductController implements Serializable {
         return productRepo.findById(id);
     }
 
+    @GetMapping("/getQ1/{custom}/")
+    public List<Product> getQ1(@PathVariable(value = "custom") String s){
+
+        return productRepo.Q1(s);
+    }
+
+
     @PostMapping("/post")
     public Product postProduct(@RequestBody Product product){
         return productRepo.save(product);
